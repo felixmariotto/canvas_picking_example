@@ -35,7 +35,27 @@ module.exports = env => {
       })
     ],
 
-    devtool: devtool
+    devtool: devtool,
+
+    module: {
+
+      rules: [
+
+        {
+          test: /\.(png|svg|jpg|gif|glb|basis|exr)$/,
+          use: [
+            'file-loader',
+          ],
+        },
+
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
+
+      ],
+
+    }
 
   }
 
